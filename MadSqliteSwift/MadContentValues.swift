@@ -8,6 +8,11 @@ import MadSqlite
 public class MadContentValues {
 
     internal let cv = MADSqliteFactory.contentValues()!
+    
+    /**
+     * Key values container useful for the insertion of data into a MadDatabase.
+     */
+    public init() {}
 
    /**
     * Adds a value to the set.

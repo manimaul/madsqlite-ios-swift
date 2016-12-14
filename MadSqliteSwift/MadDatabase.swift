@@ -64,6 +64,15 @@ public class MadDatabase {
         let q = md.query(s, withArgs: a)!
         return MadQuery(query: q)
     }
+    
+    /**
+     * Execute a single SQL statement that is NOT a SELECT or any other SQL statement that returns data.
+     *
+     * @param sql the sql to execute.
+     */
+    public func exec(sql s: String) {
+        _ = md.exec(s)
+    }
 
    /**
     * Execute a single SQL statement that is NOT a SELECT or any other SQL statement that returns data.
@@ -71,7 +80,7 @@ public class MadDatabase {
     * @param sql the sql to execute.
     * @return the number of rows changed.
     */
-    public func exec(sql s: String) -> Int {
+    public func execResult(sql s: String) -> Int {
         return md.exec(s)
     }
 
