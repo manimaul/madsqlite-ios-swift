@@ -61,15 +61,8 @@ class MadSqliteFTS5Tests: XCTestCase {
     }
     
     func assertMatches(database db: MadDatabase, sql s: String) {
-        XCTAssertFalse(queryMatches(database: db, sql: s).isEmpty)
-    }
-    
-    func assertDoesNotMatch(database db: MadDatabase, sql s: String) {
-        XCTAssertTrue(queryMatches(database: db, sql: s).isEmpty)    }
-    
-    func queryMatches(database md: MadDatabase, sql s: String) ->[String] {
-        let query = md.query(sql: s)
-        XCTAssertNil(md.getError())
+        let query = db.query(sql: s)
+        XCTAssertNil(db.getError())
         XCTAssertTrue(query.moveToFirst())
         var rValue = [String]()
         while !(query.isAfterLast()) {
@@ -81,7 +74,14 @@ class MadSqliteFTS5Tests: XCTestCase {
                 break
             }
         }
-        return rValue
+        XCTAssertFalse(rValue.isEmpty)
+    }
+    
+    func assertDoesNotMatch(database db: MadDatabase, sql s: String) {
+        let query = db.query(sql: s)
+        XCTAssertNil(db.getError())
+        XCTAssertFalse(query.moveToFirst())
+        XCTAssertTrue(query.isAfterLast())
     }
     
 }
