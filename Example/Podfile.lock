@@ -1,0 +1,26 @@
+PODS:
+  - MadSqlite (0.2.1)
+  - MadSqliteSwift (0.2.1):
+    - MadSqlite (= 0.2.1)
+
+DEPENDENCIES:
+  - MadSqliteSwift (from `https://github.com/manimaul/madsqlite-ios-swift.git`)
+
+EXTERNAL SOURCES:
+  MadSqliteSwift:
+    :git: https://github.com/manimaul/madsqlite-ios-swift.git
+    :submodules: true
+
+CHECKOUT OPTIONS:
+  MadSqliteSwift:
+    :commit: bc03f6c347b4494e53b62a19981bb1b9fc3cf8e2
+    :git: https://github.com/manimaul/madsqlite-ios-swift.git
+    :submodules: true
+
+SPEC CHECKSUMS:
+  MadSqlite: 139539dd004318d16e418e6632fd3f8b150315fd
+  MadSqliteSwift: d6d94d1cc98250fbe1d7a5eecf840f76057b8bb2
+
+PODFILE CHECKSUM: 8341622713d0414fb7dc42029e3cbdeabac671ad
+
+COCOAPODS: 1.1.1
