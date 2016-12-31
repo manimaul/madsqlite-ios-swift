@@ -11,7 +11,7 @@ MadSqlite is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'MadSqlite', '~> 0.2.1'
+pod 'MadSqliteSwift', '~> 0.2.1'
 ```
 or bleeding edge:
 ```ruby
@@ -21,6 +21,10 @@ pod 'MadSqliteSwift', :git => 'https://github.com/manimaul/madsqlite.git', :subm
 ####Example
 
 ```swift
+import MadSqliteSwift
+
+// ...
+
 // Open / create database
 let md = MadDatabase(name: "mydb")
 
