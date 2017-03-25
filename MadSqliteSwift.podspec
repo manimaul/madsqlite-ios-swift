@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name                   = 'MadSqliteSwift'
-  s.version                = '0.2.1'
+  s.version                = '0.2.3'
 
   s.summary                = 'A simple Sqlite Abstraction'
   s.description            = 'A simple Sqlite Abstraction with FTS5 and R*Tree enabled'
@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target  = '10.1'
   s.source_files           = 'MadSqliteSwift/**/*.{swift}'
   s.requires_arc           = true
-  s.dependency 'MadSqlite', s.version.to_s 
+  s.dependency 'MadSqlite', s.version.to_s
 end

@@ -28,6 +28,19 @@ public class MadDatabase {
     public init(name n: String) {
         md = MADSqliteFactory.databaseNamed(n)!
     }
+    
+    /**
+     * Opens or creates a file system sqlite database.
+     *
+     * @param path the absolute path of the database
+     * @return a file system sqlite database
+     */
+    public init?(path path: String) {
+        guard let db = MADSqliteFactory.database(withPath: path) else {
+            return nil
+        }
+        md = db
+    }
 
     /**
      * Convenience method for inserting a row into the database.
