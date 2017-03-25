@@ -4,22 +4,17 @@
 
 osx_image: xcode8.2
 
-xcode_workspace: MadSqliteSwift.xcworkspace
-xcode_scheme: MadSqliteSwift
 xcode_sdk: iphonesimulator10.1
 
 language: objective-c
 
 cache: cocoapods
 
-podfile: Podfile
+podfile: Example/Podfile
 
 before_install:
-- brew update
-- brew install xctool
 - gem install cocoapods # Since Travis is not always on latest version
-- pod install
+- pod install --project-directory=Example
 
 script:
 - pod lib lint --allow-warnings
-- set -o pipefail && xcodebuild test -workspace MadSqliteSwift.xcworkspace -scheme MadSqliteSwift -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.1' ONLY_ACTIVE_ARCH=NO
